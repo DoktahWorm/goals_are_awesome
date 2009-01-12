@@ -9,7 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090112212224) do
+ActiveRecord::Schema.define(:version => 20090112224339) do
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id",        :null => false
+    t.integer  "taggable_id",   :null => false
+    t.string   "taggable_type", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type"], :name => "index_taggings_on_tag_id_and_taggable_id_and_taggable_type", :unique => true
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
