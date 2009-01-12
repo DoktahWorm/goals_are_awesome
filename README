@@ -8,6 +8,8 @@
   ------------------------------
     [sudo] gem install rspec-rails
     [sudo] gem install has_many_polymorphs
+    [sudo] gem install rubyist-aasm
+    [sudo] gem install haml
 
   ------------------------------
    Authors: 
