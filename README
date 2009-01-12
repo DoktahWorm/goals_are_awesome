@@ -7,6 +7,7 @@
    Requirements for Developers:
   ------------------------------
     [sudo] gem install rspec-rails
+    [sudo] gem install has_many_polymorphs
 
   ------------------------------
    Authors: 
