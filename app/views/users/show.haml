@@ -1,0 +1,7 @@
+%h1
+  = @user.login
+
+- if current_user.id == @user.id
+  %pre
+    = current_user.to_yaml
+  

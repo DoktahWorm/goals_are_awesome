@@ -18,6 +18,8 @@ class UsersController < ApplicationController
     @user.register! if @user && @user.valid?
     success = @user && @user.valid?
     if success && @user.errors.empty?
+      @user.activate!
+      @user.reload
       redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
     else

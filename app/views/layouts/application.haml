@@ -1,0 +1,11 @@
+%user_bar
+  = render :partial => "users/user_bar"
+
+%br/
+
+- if flash[:error]
+  %errors= flash[:error]
+- if flash[:notice]
+  %errors= flash[:notice]
+
+= yield
