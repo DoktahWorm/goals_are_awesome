@@ -75,3 +75,12 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
+
+
+
+DEFAULTS = {
+  :application_name => "Goals Are Awesome!",
+  :base_url => "http://goals-are-awesome.com/",
+  :admin_email => "admin@goals-are-awesome.com"
+}
+

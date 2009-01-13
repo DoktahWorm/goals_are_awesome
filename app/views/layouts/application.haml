@@ -1,11 +1,18 @@
-%user_bar
-  = render :partial => "users/user_bar"
+%html
+  %head
+    %title= DEFAULTS[:application_name]
+  %body
+    %header
+      %user_bar
+        = render :partial => "users/user_bar"
+    %main
+      - if flash[:error]
+        %errors= flash[:error]
+      - if flash[:notice]
+        %errors= flash[:notice]
+      = yield
+    %footer
+  
 
-%br/
 
-- if flash[:error]
-  %errors= flash[:error]
-- if flash[:notice]
-  %errors= flash[:notice]
 
-= yield
