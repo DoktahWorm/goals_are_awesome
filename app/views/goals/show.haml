@@ -1,0 +1,10 @@
+- title "Goal"
+
+%p
+  %strong Short Description:
+  =h @goal.short_desc
+%p
+  %strong Long Desc:
+  =h @goal.long_desc
+%p
+  = show_links_for(@goal, goals_path)
