@@ -27,7 +27,6 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'has_many_polymorphs', :version => '2.12'
   config.gem "rubyist-aasm", :lib => "aasm"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
@@ -76,7 +75,7 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
 
-
+require 'tag_extensions'
 
 DEFAULTS = {
   :application_name => "Goals Are Awesome!",

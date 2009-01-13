@@ -7,9 +7,13 @@
    Requirements for Developers:
   ------------------------------
     [sudo] gem install rspec-rails
-    [sudo] gem install has_many_polymorphs
     [sudo] gem install rubyist-aasm
     [sudo] gem install haml
+
+   Warnings:
+  ------------------------------
+    Use the has_many_polymorphs plugin, rather than the gem 
+      (which is working, as of v2.12 with Rails 2.2.2).
 
   ------------------------------
    Authors: 
