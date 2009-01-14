@@ -27,7 +27,6 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'has_many_polymorphs', :version => '2.12'
   config.gem "rubyist-aasm", :lib => "aasm"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
@@ -79,10 +78,12 @@ Rails::Initializer.run do |config|
 
 end
 
-
 DEFAULTS = {
   :application_name => "Goals Are Awesome!",
   :base_url => "http://goals-are-awesome.com/",
   :admin_email => "admin@goals-are-awesome.com"
 }
 
+# require 'tag_extensions'
+
+require 'tagging_extensions'

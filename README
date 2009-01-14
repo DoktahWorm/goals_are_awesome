@@ -7,9 +7,19 @@
    Requirements for Developers:
   ------------------------------
     [sudo] gem install rspec-rails
-    [sudo] gem install has_many_polymorphs
     [sudo] gem install rubyist-aasm
     [sudo] gem install haml
+
+   Warnings:
+  ------------------------------
+    Use the has_many_polymorphs plugin, rather than the gem 
+      (gem rel v2.12 does not work with Rails 2.2.2).
+
+   Setup:
+  -----------------------------
+    After cloning the project.  You can run the Rake setup
+    task like so:
+      $ rake gaa:setup
 
   ------------------------------
    Authors: 

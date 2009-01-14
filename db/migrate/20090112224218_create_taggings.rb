@@ -4,8 +4,7 @@ class CreateTaggings < ActiveRecord::Migration
       t.integer :tag_id, :null => false
       t.integer :taggable_id, :null => false
       t.string  :taggable_type, :null => false
-      
-      t.timestamps
+      # t.column :position, :integer # Uncomment this if you need to use <tt>acts_as_list</tt>.
     end
   end
 
