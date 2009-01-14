@@ -13,7 +13,7 @@
    Warnings:
   ------------------------------
     Use the has_many_polymorphs plugin, rather than the gem 
-      (which is working, as of v2.12 with Rails 2.2.2).
+      (gem rel v2.12 does not work with Rails 2.2.2).
 
   ------------------------------
    Authors: 
