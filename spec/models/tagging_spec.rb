@@ -3,8 +3,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Tagging do
   before(:each) do
     @valid_attributes = {
-      :tag_id => ,
-      :taggable_id => ,
+      :tag_id => 1,
+      :taggable_id => 1,
       :taggable_type => "value for taggable_type"
     }
   end
