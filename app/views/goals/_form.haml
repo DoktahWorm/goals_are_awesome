@@ -6,4 +6,11 @@
   %p
     = f.label 'long description'
     = f.text_area :long_desc
+  .tags
+    - new_or_existing = @goal.new_record? ? 'new' : 'existing'
+    - prefix = "goal[tags_for_#{new_or_existing}]"
+    %p
+      = f.label 'tags'
+      = #f.text_field :tags
+      = text_field_tag prefix, @goal.tag_list
   %p= f.submit "Submit"
