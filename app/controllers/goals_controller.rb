@@ -1,5 +1,7 @@
 class GoalsController < ApplicationController
-  layout false
+  # layout false
+  include AuthenticatedSystem
+  before_filter :redirect_if_not_logged_in
   
   def tags
     @popular_tags = Tag.top_ten
