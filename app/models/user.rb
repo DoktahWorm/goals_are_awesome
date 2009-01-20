@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   include Authorization::AasmRoles
 
-  has_many :objectives
-  has_many :goals, :through => :objectives
+  # has_many :objectives
+  # has_many :goals, :through => :objectives
+  has_many :goals
 
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
@@ -49,6 +50,11 @@ class User < ActiveRecord::Base
 
   def email=(value)
     write_attribute :email, (value ? value.downcase : nil)
+  end
+  
+  # for 'name'-based retrieval of resource (as opposed to :id)
+  def to_param
+    login.downcase.gsub(/ /, "_")
   end
 
   protected

@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
 class TagTest < Test::Unit::TestCase
-  fixtures :goals  
+  fixtures :goals
   def setup
     @obj = Goal.find(:first)
     @obj.tag_with "pale imperial"

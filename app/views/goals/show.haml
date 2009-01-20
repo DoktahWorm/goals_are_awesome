@@ -10,4 +10,4 @@
   %strong Tags:
   =h @goal.tag_list
 %p
-  = show_links_for(@goal, goals_path)
+  = show_links_for(@goal, user_goals_path(current_user))

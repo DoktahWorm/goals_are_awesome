@@ -1,6 +1,7 @@
-- form_for @goal do |f|
+- form_for([current_user, @goal]) do |f|
   = f.error_messages
   %p
+    =# f.hidden_field :user_id
     = f.label 'short description'
     = f.text_field :short_desc
   %p

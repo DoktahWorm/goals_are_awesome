@@ -7,7 +7,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.crap '/home', :controller => 'home', :action => 'index'
 
-  map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }
+  map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }, 
+                :has_many => :goals
+  
   map.resource :session
 
   map.resources :goals
