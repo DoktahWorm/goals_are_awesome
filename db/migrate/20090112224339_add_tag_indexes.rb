@@ -5,7 +5,7 @@ class AddTagIndexes < ActiveRecord::Migration
   end
 
   def self.down
-    remove_index :tags, :name
     remove_index :taggings, [:tag_id, :taggable_id, :taggable_type]
+    remove_index :tags, :name
   end
 end

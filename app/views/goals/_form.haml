@@ -2,11 +2,11 @@
   = f.error_messages
   %p
     =# f.hidden_field :user_id
-    = f.label 'short description'
-    = f.text_field :short_desc
+    = f.label 'title'
+    = f.text_field :title
   %p
-    = f.label 'long description'
-    = f.text_area :long_desc
+    = f.label 'description'
+    = f.text_area :title
   .tags
     - new_or_existing = @goal.new_record? ? 'new' : 'existing'
     - prefix = "goal[tags_for_#{new_or_existing}]"
