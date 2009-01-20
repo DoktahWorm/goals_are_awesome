@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  short_desc: MyString
+  long_desc: MyText
+  complete: false
+  target_completion_date: 2009-01-13 00:18:32
+
+two:
+  short_desc: MyString
+  long_desc: MyText
+  complete: false
+  target_completion_date: 2009-01-13 00:18:32
