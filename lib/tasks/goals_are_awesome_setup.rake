@@ -16,6 +16,9 @@ namespace :gaa do
   desc "Setup a new project after cloning from scratch."
   task :setup do
     create_database_config
+    system("rake db:migrate")
+    system("rake db:fixtures:load")
+    system("rake db:test:prepare")
     puts "Done with setup.  Happy coding!"
   end
 end
