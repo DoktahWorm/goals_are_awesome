@@ -1,13 +1,11 @@
-- title "Goal"
+%h1= @goal.short_desc
 
-%p
-  %strong Short Description:
-  =h @goal.short_desc
-%p
-  %strong Long Desc:
-  =h @goal.long_desc
-%p
-  %strong Tags:
-  =h @goal.tag_list
-%p
-  = show_links_for(@goal, goals_path)
+%table
+  %tr
+    %td.label description:
+    %td=h @goal.long_desc
+  %tr
+    %td.label tags:
+    %td=h @goal.tag_list
+
+= show_buttons(@goal)

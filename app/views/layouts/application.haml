@@ -1,14 +1,12 @@
 %html
   %head
-    %title= DEFAULTS[:application_name]
+    %title= APPLICATION[:name]
+    = stylesheet_link_tag 'gaa'
   %body
-    %header
-      %user_bar
-        = render :partial => "users/user_bar"
-    %main
-      - if flash[:error]
-        %errors= flash[:error]
-      - if flash[:notice]
-        %errors= flash[:notice]
+    #header
+      = render :partial => 'users/user_bar'
+      = render :partial => 'layouts/main_menu'
+    #main
+      = render :partial => 'layouts/flash_messages'
       = yield
-    %footer
+    #footer

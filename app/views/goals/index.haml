@@ -1,3 +1,7 @@
+%h1= "#{current_user.login}'s goals"
+
 - @goals.each do |goal|
   %ul
     %li= link_to goal.short_desc, goal_path(goal)
+
+= show_buttons(@goal)

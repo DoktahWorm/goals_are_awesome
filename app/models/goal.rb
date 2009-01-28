@@ -1,5 +1,6 @@
 class Goal < ActiveRecord::Base
   attr_accessible :short_desc, :long_desc, :tags_for_new, :tags_for_existing
+  belongs_to :owner, :polymorphic => true
 
   def associate_new_or_existing( tag_name )
     tag = Tag.find_or_initialize_by_name(tag_name)

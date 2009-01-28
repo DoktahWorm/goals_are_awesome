@@ -1,16 +1,17 @@
 - form_for @goal do |f|
   = f.error_messages
-  %p
-    = f.label 'short description'
-    = f.text_field :short_desc
-  %p
-    = f.label 'long description'
-    = f.text_area :long_desc
-  .tags
-    - new_or_existing = @goal.new_record? ? 'new' : 'existing'
-    - prefix = "goal[tags_for_#{new_or_existing}]"
-    %p
-      = f.label 'tags'
-      = #f.text_field :tags
-      = text_field_tag prefix, @goal.tag_list
-  %p= f.submit "Submit"
+  %table.form
+    %tr
+      %td.label short description
+      %td= f.text_field :short_desc
+    %tr
+      %td.label long description
+      %td= f.text_area :long_desc, :height => 30
+    %tr
+      %td.label tags
+      - new_or_existing = @goal.new_record? ? 'new' : 'existing'
+      - prefix = "goal[tags_for_#{new_or_existing}]"
+      %td= text_field_tag prefix, @goal.tag_list
+    %tr
+      %td
+      %td= f.submit "Submit"

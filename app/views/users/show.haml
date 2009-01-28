@@ -1,7 +1,15 @@
 %h1
   = @user.login
 
-- if current_user.id == @user.id
-  %pre
-    = current_user.to_yaml
+%h2 group goals
+
+%h2 personal goals
+
+%h2 good habit development
+%h3 goals
+
+%ul
+  - current_user.goals.each do |goal|
+    %li= link_to goal.short_desc, goal_path(goal)
+
   

@@ -1,16 +1,17 @@
 class GoalsController < ApplicationController
-  layout false
+
+  before_filter :redirect_if_not_logged_in
   
   def tags
     @popular_tags = Tag.top_ten
   end
   
   def index
-    @goals = Goal.find(:all)
+    @goals = current_user.goals.find(:all)
   end
 
   def show
-    @goal = Goal.find(params[:id])
+    @goal = current_user.goals.find(params[:id])
   end
 
   def new
@@ -18,7 +19,7 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = Goal.new(params[:goal])
+    @goal = current_user.goals.new(params[:goal])
     # @goal.tag_with_string params[:list_o_tags]
     if @goal.save
       flash[:notice] = "Successfully saved goal."
@@ -31,13 +32,13 @@ class GoalsController < ApplicationController
   end
 
   def edit
-    @goal = Goal.find(params[:id])
+    @goal = current_user.goals.find(params[:id])
   end
 
   def update
     params[:tags_for_existing] ||= ""
 
-    @goal = Goal.find(params[:id])
+    @goal = current_user.goals.find(params[:id])
     if @goal.update_attributes(params[:goal])
       flash[:notice] = "Successfully updated goal."
       redirect_to goal_path
@@ -47,7 +48,7 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    @goal = Goal.find(params[:id])
+    @goal = current_user.goals.find(params[:id])
     @goal.destroy
     flash[:notice] = "Successfully destroyed goal."
     redirect_to goals_path

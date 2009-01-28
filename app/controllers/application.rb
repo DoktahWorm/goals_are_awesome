@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
   
   filter_parameter_logging :password
 
+  include AuthenticatedSystem
+
   private
   
   def redirect_if_not_logged_in

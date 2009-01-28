@@ -1,0 +1,110 @@
+body {
+  margin-top: 3em;
+  margin-left: 3em;
+  margin-right: 3em;
+  width: 666px;
+  font-family: "Lucida Sans";
+  font-size: 0.9em; }
+
+#error {
+  margin-top: 2em; }
+
+#notice {
+  margin-top: 2em; }
+
+#header {
+  margin-bottom: 1em; }
+
+#user_bar {
+  clear: both;
+  text-align: right;
+  margin-bottom: 0.5em; }
+
+#main_menu {
+  font-size: 0.8em;
+  clear: both; }
+  #main_menu ul {
+    padding: 0;
+    margin: 0; }
+  #main_menu li {
+    float: left;
+    width: 4em;
+    text-align: center;
+    border: 1px solid black;
+    padding-bottom: 0.25em;
+    padding-top: 0.25em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin-right: 0.5em;
+    font-style: italic; }
+  #main_menu a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold; }
+
+.br {
+  clear: both; }
+
+#main {
+  clear: both;
+  margin-left: 3em; }
+
+p {
+  margin-left: 3em; }
+
+h1 {
+  margin-top: 1.5em;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-style: italic; }
+
+h2 {
+  font-weight: bold;
+  font-style: italic; }
+
+#error {
+  text-align: center;
+  background-color: red;
+  color: white;
+  width: 50%; }
+
+#notice {
+  text-align: center;
+  background-color: blue;
+  color: white;
+  width: 50%; }
+
+table {
+  margin-left: 3em; }
+
+td {
+  padding: 0.5em; }
+
+td.label {
+  vertical-align: top;
+  text-align: right;
+  font-style: italic; }
+
+#action_buttons {
+  clear: both;
+  margin: 0;
+  margin-top: 3em;
+  font-size: 0.8em; }
+  #action_buttons ul {
+    padding: 0;
+    margin: 0;
+    font-style: italic; }
+  #action_buttons li {
+    float: left;
+    width: 5em;
+    text-align: center;
+    border: 1px solid black;
+    padding-bottom: 0.25em;
+    padding-top: 0.25em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    margin-right: 0.5em; }
+  #action_buttons a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold; }

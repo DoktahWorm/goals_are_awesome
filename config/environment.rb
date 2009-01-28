@@ -78,8 +78,8 @@ Rails::Initializer.run do |config|
 
 end
 
-DEFAULTS = {
-  :application_name => "Goals Are Awesome!",
+APPLICATION = {
+  :name => "Goals Are Awesome!",
   :base_url => "http://goals-are-awesome.com/",
   :admin_email => "admin@goals-are-awesome.com"
 }
