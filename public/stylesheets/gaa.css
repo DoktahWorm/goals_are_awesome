@@ -19,7 +19,8 @@ body {
   clear: both; }
   #main_menu ul {
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    list-style: none; }
   #main_menu li {
     float: left;
     width: 4em;
@@ -99,7 +100,8 @@ td.label {
   #action_buttons ul {
     padding: 0;
     margin: 0;
-    font-style: italic; }
+    font-style: italic;
+    list-style: none; }
   #action_buttons li {
     float: left;
     width: 5em;
