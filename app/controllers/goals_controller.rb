@@ -22,7 +22,7 @@ class GoalsController < ApplicationController
     @goal = current_user.goals.new(params[:goal])
     # @goal.tag_with_string params[:list_o_tags]
     if @goal.save
-      flash[:notice] = "Successfully saved goal."
+      flash[:notice] = "Successfully saved goal"
       redirect_to goal_path(@goal)
     else
       render :action => 'new'
@@ -40,7 +40,7 @@ class GoalsController < ApplicationController
 
     @goal = current_user.goals.find(params[:id])
     if @goal.update_attributes(params[:goal])
-      flash[:notice] = "Successfully updated goal."
+      flash[:notice] = "Successfully updated goal"
       redirect_to goal_path
     else
       render :action => 'edit'
@@ -50,7 +50,7 @@ class GoalsController < ApplicationController
   def destroy
     @goal = current_user.goals.find(params[:id])
     @goal.destroy
-    flash[:notice] = "Successfully destroyed goal."
+    flash[:notice] = "Successfully destroyed goal"
     redirect_to goals_path
   end
 

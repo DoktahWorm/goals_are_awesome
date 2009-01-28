@@ -1,33 +1,33 @@
-%h1 Sign up as a new user
+%h1 Create a New Account
+%p Get one step closer towards achieving your goals!
+%br/
 - @user.password = @user.password_confirmation = nil
 
 - if error_messages_for :user
   = error_messages_for :user
 
 - form_for :user, :url => users_path do |f|
-  %p
-    = label_tag 'login'
-    %br/
-    = f.text_field :login
+  %table
+    %tr
+      %td.label= 'login'
+      %td= f.text_field :login
 
-  %p
-    = label_tag 'name'
-    %br/
-    = f.text_field :name
+    %tr
+      %td.label= 'name'
+      %td= f.text_field :name
 
-  %p
-    = label_tag 'email'
-    %br/
-    = f.text_field :email
+    %tr
+      %td.label= 'email'
+      %td= f.text_field :email
 
-  %p
-    = label_tag 'password'
-    %br/
-    = f.password_field :password
+    %tr
+      %td.label= 'password'
+      %td= f.password_field :password
 
-  %p
-    = label_tag 'password_confirmation', 'Confirm Password'
-    %br/
-    = f.password_field :password_confirmation
+    %tr
+      %td.label= 'confirm<br />password'
+      %td= f.password_field :password_confirmation
 
-  %p= submit_tag 'Sign up'
+    %tr
+      %td.label
+      %td= submit_tag 'Sign up'

@@ -5,7 +5,8 @@
   %body
     #header
       = render :partial => 'users/user_bar'
-      = render :partial => 'layouts/main_menu'
+      - if logged_in?
+        = render :partial => 'layouts/main_menu'
     #main
       = render :partial => 'layouts/flash_messages'
       = yield
