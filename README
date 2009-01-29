@@ -25,3 +25,8 @@
    Authors: 
     Dan Tripp <doktahworm@gmail.com>
     Kyle Oba <koba@mudphone.com>
+
+
+
+    After install, create a user account (/signup) and login.
+      Copy the YML from the home page (/home) to /spec/fixtures/users.yml

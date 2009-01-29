@@ -4,6 +4,6 @@
 
 %h3 Get Started!
 - if current_user
-  %p= "Visit #{link_to 'Your Home Page', user_path(current_user)} to get the ball rolling!"
+  %p= "Visit #{link_to 'Your Home Page', user_path(current_user.id)} to get the ball rolling!"
 - else
   %p= "#{link_to 'Log in', login_path} or #{link_to 'sign up', signup_path} to take one step closer!"

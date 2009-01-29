@@ -34,3 +34,19 @@ old_password_holder:
   activation_code:           
   activated_at:              <%= 5.days.ago.to_s :db %>
   state:                     active
+
+dan:
+  salt: 8ed7481faea0c4c4b357e638685bf813c057f02f
+  name: Dan Tripp
+  activated_at: 2009-01-29 19:18:36
+  updated_at: 2009-01-29 19:18:36
+  crypted_password: 78cccdfca02253a5ce2c858c5fc5ee12dccf33a0
+  deleted_at: 
+  activation_code: 
+  remember_token_expires_at: 
+  id: 4
+  remember_token: 
+  login: dan
+  state: active
+  created_at: 2009-01-29 19:18:36
+  email: doktahworm@gmail.com

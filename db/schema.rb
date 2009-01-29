@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20090112231910) do
     t.datetime "target_completion_date"
     t.integer  "owner_id"
     t.string   "owner_type"
+    t.string   "type"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
