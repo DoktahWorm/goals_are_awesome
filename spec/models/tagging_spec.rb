@@ -5,7 +5,7 @@ describe Tagging do
     @valid_attributes = {
       :tag_id => 1,
       :taggable_id => 1,
-      :taggable_type => "value for taggable_type"
+      :taggable_type => "Goal"
     }
   end
 

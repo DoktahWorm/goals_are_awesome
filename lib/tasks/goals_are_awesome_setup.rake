@@ -17,7 +17,7 @@ namespace :gaa do
   task :setup do
     create_database_config
     system("rake db:migrate")
-    system("rake db:fixtures:load")
+    system("rake spec:db:fixtures:load")
     system("rake db:test:prepare")
     puts "Done with setup.  Happy coding!"
   end

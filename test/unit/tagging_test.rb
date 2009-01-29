@@ -40,8 +40,10 @@ class TaggingTest < Test::Unit::TestCase
   
   def test__add_tags
     @obj1._add_tags "porter longneck"
-    assert Tag.find_by_name("porter").taggables.include?(@obj1)
-    assert Tag.find_by_name("longneck").taggables.include?(@obj1)
+    # assert Tag.find_by_name("porter").taggables.include?(@obj1)
+    assert !Tag.find_by_name("porter").taggables.select{ |tag| tag.id == @obj1.id }.empty?
+    # assert Tag.find_by_name("longneck").taggables.include?(@obj1)
+    assert !Tag.find_by_name("longneck").taggables.select{ |tag| tag.id == @obj1.id }.empty?
     assert_equal "longneck pale porter", @obj1.tag_list    
     
     @obj1._add_tags [2]

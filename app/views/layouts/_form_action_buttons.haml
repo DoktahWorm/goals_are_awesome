@@ -1,0 +1,9 @@
+#action_buttons
+  %ul
+    %li= link_to 'New', :action => :new
+    - unless goal.blank?
+      - if goal.id
+        %li= link_to_unless_current 'Edit', :action => :edit, :id => goal
+        %li= link_to 'Destroy', goal, :confirm => 'Are you sure?', :method => :delete
+    %li= link_to_unless_current 'View All', :action => :index
+%br/

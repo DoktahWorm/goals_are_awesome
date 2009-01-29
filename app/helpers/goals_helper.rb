@@ -8,27 +8,7 @@ module GoalsHelper
   end
 
   def show_buttons(goal)
-    out = "<div id='action_buttons'><ul>"
-    out += "<li>#{link_to('New', :action => :new)}</li>"
-    unless goal.blank?
-      if goal.id
-        out += "<li>#{link_to_unless_current('Edit', :action => :edit, :id => goal)}</li>"
-        out += "<li>#{link_to('Destroy', goal, :confirm => 'Are you sure?', :method => :delete)}</li>"
-      end
-    end
-    out += "<li>#{link_to_unless_current('View All', :action => :index)}</li>"
-    out += "</ul></div><p class='br'/>"
+    render :partial => "layouts/form_action_buttons"
   end
 
-  def action_links(goal)
-    out = "#{link_to('New', :action => :new)} | "
-    unless goal.blank?
-      if goal.id
-        out += "#{link_to_unless_current('Edit', :action => :edit, :id => goal)} | "
-        out += "#{link_to('Destroy', goal, :confirm => 'Are you sure?', :method => :delete)} | "
-      end
-    end
-    out += "#{link_to_unless_current('View All', :action => :index)}"
-  end
-  
 end

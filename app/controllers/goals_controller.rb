@@ -4,18 +4,30 @@ class GoalsController < ApplicationController
   
   def tags
     @popular_tags = Tag.top_ten
+    respond_to do |wants|
+      wants.html
+    end
   end
   
   def index
     @goals = current_user.goals.find(:all)
+    respond_to do |wants|
+      wants.html
+    end
   end
 
   def show
     @goal = current_user.goals.find(params[:id])
+    respond_to do |wants|
+      wants.html
+    end
   end
 
   def new
-    @goal = Goal.new
+    @goal = current_user.goals.new
+    respond_to do |wants|
+      wants.html
+    end
   end
 
   def create
@@ -28,22 +40,37 @@ class GoalsController < ApplicationController
       render :action => 'new'
     end
     
-    # on error destroy orphaned tags?
+    respond_to do |wants|
+      if @goal.save
+        flash[:notice] = 'Goal was successfully created.'
+        wants.html { redirect_to([current_user, @goal]) }
+        wants.xml { render :xml => @goal, :status => :created, :location => [current_user, @goal] }
+      else
+        wants.html { render :action => "new" }
+        wants.xml { render :xml => @goal.errors, :status => :unprocessable_entity }
+      end
+    end
   end
-
+  
   def edit
     @goal = current_user.goals.find(params[:id])
+    respond_to do |wants|
+      wants.html
+    end
   end
 
   def update
     params[:tags_for_existing] ||= ""
-
     @goal = current_user.goals.find(params[:id])
-    if @goal.update_attributes(params[:goal])
-      flash[:notice] = "Successfully updated goal"
-      redirect_to goal_path
-    else
-      render :action => 'edit'
+    respond_to do |wants|
+      if @goal.update_attributes(params[:goal])
+        flash[:notice] = 'Goal was successfully updated.'
+        wants.html { redirect_to([current_user, @goal]) }
+        wants.xml { render :xml => @goal, :status => :created, :location => [current_user, @goal] }
+      else
+        wants.html { render :action => "edit" }
+        wants.xml { render :xml => @goal.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

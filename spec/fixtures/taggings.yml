@@ -1,11 +1,9 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  tag_id: 
-  taggable_id: 
-  taggable_type: MyString
+  tag_id: 1
+  taggable_id: 1
+  taggable_type: Goal
 
 two:
-  tag_id: 
-  taggable_id: 
-  taggable_type: MyString
+  tag_id: 2
+  taggable_id: 2
+  taggable_type: Goal

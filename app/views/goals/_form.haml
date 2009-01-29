@@ -1,12 +1,12 @@
-- form_for @goal do |f|
+- form_for([current_user, @goal]) do |f|
   = f.error_messages
   %table.form
     %tr
-      %td.label short description
-      %td= f.text_field :short_desc
+      %td.label title
+      %td= f.text_field :title
     %tr
-      %td.label long description
-      %td= f.text_area :long_desc, :height => 30
+      %td.label description
+      %td= f.text_area :description
     %tr
       %td.label tags
       - new_or_existing = @goal.new_record? ? 'new' : 'existing'
