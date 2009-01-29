@@ -4,9 +4,11 @@
     = stylesheet_link_tag 'gaa'
   %body
     #header
-      = render :partial => 'users/user_bar'
+      = render :partial => 'layouts/user_bar'
+      %h1= APPLICATION[:name]
       - if logged_in?
         = render :partial => 'layouts/main_menu'
+      %br.br/
     #main
       = render :partial => 'layouts/flash_messages'
       = yield

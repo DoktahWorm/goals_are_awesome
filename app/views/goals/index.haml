@@ -1,7 +1,13 @@
-%h1= "#{current_user.login}'s goals"
+%h2= "#{current_user.login}'s goals"
 
-- @goals.each do |goal|
-  %ul
-    %li= link_to goal.short_desc, goal_path(goal)
+%table
+  %tr
+    %th
+    %th tags
+  - @goals.each do |goal|
+    %tr
+      %td.label= link_to h(goal.title), goal_path(goal)
+      %td=h goal.description
+      %td= goal.tag_list
 
 = show_buttons(@goal)

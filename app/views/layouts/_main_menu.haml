@@ -1,5 +1,6 @@
 #main_menu
   %ul
-    %li= link_to 'Goals', goals_path, {:title => 'Your Goals'}
-    %li= link_to 'Habits', goals_path, {:title => 'Your Habit Development'}
+    %li= link_to_unless_current 'Home', user_path(current_user.id), {:title => 'Your Account Info'}
+    %li= link_to_unless_current 'Goals', goals_path, {:title => 'Your Goals'}
+    %li= link_to_unless_current 'Habits', goals_path, {:title => 'Your Habit Development'}
 %p.br

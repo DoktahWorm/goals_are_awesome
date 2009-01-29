@@ -1,6 +1,8 @@
 #user_bar
+  = link_to_unless_current 'about', about_path
+  = " | "
   - if logged_in?
-    = link_to_current_user :content_method => :login
+    = link_to current_user.login, user_path(current_user.id)
     = " [#{ link_to 'X', logout_path, :title => 'Log out' }]"
   - else
     = link_to 'Log in', login_path, { :title => 'Log in to Your Account', :style => 'border: none;'}

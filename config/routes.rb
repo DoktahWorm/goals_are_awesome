@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
 
-  map.crap '/home', :controller => 'home', :action => 'index'
+  map.about '/about', :controller => 'about', :action => 'index'
 
   map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }, 
                 :has_many => :goals

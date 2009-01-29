@@ -7,6 +7,8 @@ class CreateGoals < ActiveRecord::Migration
       t.datetime :target_completion_date
       t.integer :owner_id
       t.string :owner_type
+      t.string :type
+      t.integer :user_id
       t.timestamps
     end
   end

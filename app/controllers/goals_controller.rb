@@ -39,17 +39,6 @@ class GoalsController < ApplicationController
     else
       render :action => 'new'
     end
-    
-    respond_to do |wants|
-      if @goal.save
-        flash[:notice] = 'Goal was successfully created.'
-        wants.html { redirect_to([current_user, @goal]) }
-        wants.xml { render :xml => @goal, :status => :created, :location => [current_user, @goal] }
-      else
-        wants.html { render :action => "new" }
-        wants.xml { render :xml => @goal.errors, :status => :unprocessable_entity }
-      end
-    end
   end
   
   def edit
@@ -64,7 +53,7 @@ class GoalsController < ApplicationController
     @goal = current_user.goals.find(params[:id])
     respond_to do |wants|
       if @goal.update_attributes(params[:goal])
-        flash[:notice] = 'Goal was successfully updated.'
+        flash[:notice] = 'Goal was successfully updated'
         wants.html { redirect_to([current_user, @goal]) }
         wants.xml { render :xml => @goal, :status => :created, :location => [current_user, @goal] }
       else

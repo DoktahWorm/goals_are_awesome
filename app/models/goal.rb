@@ -3,7 +3,7 @@ class Goal < ActiveRecord::Base
   # has_many :objectives
   # has_many :owners, :through => :objectives, :source => :user
   belongs_to :user  
-  attr_accessible :title, :title, :tags_for_new, :tags_for_existing
+  attr_accessible :title, :title, :description, :tags_for_new, :tags_for_existing
 
   def associate_new_or_existing( tag_name )
     tag = Tag.find_or_initialize_by_name(tag_name)
